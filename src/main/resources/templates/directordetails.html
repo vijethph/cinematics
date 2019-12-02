@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Site made with Mobirise Website Builder v4.8.2, https://mobirise.com -->
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="generator" content="Mobirise v4.8.2, mobirise.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="/assets/images/icons8-cinema-film-play-100-100x100.png" type="image/x-icon">
+    <meta name="description" content="Find details about your favourite movie directors">
+    <title>Director Details</title>
+    <link rel="stylesheet" href="/assets/web/assets/mobirise-icons-bold/mobirise-icons-bold.css">
+    <link rel="stylesheet" href="/assets/web/assets/mobirise-icons/mobirise-icons.css">
+    <link rel="stylesheet" href="/assets/tether/tether.min.css">
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="/assets/socicon/css/styles.css">
+    <link rel="stylesheet" href="/assets/animatecss/animate.min.css">
+    <link rel="stylesheet" href="/assets/dropdown/css/style.css">
+    <link rel="stylesheet" href="/assets/theme/css/style.css">
+    <link rel="stylesheet" href="/assets/mobirise/css/mbr-additional.css" type="text/css">
+
+
+
+</head>
+
+<body>
+    <section class="menu cid-rJn7VXKpO2" once="menu" id="menu1-1d">
+
+
+
+        <nav
+            class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <div class="menu-logo">
+                <div class="navbar-brand">
+                    <span class="navbar-logo">
+                        <a href="index.html">
+                            <img src="assets/images/icons8-cinema-film-play-100-100x100.png" alt="Cinematics" title=""
+                                style="height: 4.7rem;">
+                        </a>
+                    </span>
+                    <span class="navbar-caption-wrap"><a class="navbar-caption text-success display-2"
+                            href="/">Cinematics</a></span>
+                </div>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
+                    <li class="nav-item">
+                        <a class="nav-link link text-white display-7" href="/">
+                            Overview</a>
+                    </li>
+                    <li class="nav-item dropdown"><a class="nav-link link text-white dropdown-toggle display-7"
+                            href="https://google.com" data-toggle="dropdown-submenu" aria-expanded="false"><span
+                                class="mbrib-features mbr-iconfont mbr-iconfont-btn"
+                                style="color: rgb(3, 218, 246);"></span>
+                            Features
+                        </a>
+                        <div class="dropdown-menu"><a class="text-white dropdown-item display-7" href="/find">Basic
+                                Search</a><a class="text-white dropdown-item display-7" href="/findadv">Advanced
+                                Search</a>
+                            <div class="dropdown"><a class="text-white dropdown-item dropdown-toggle display-7"
+                                    href="https://google.com" data-toggle="dropdown-submenu" aria-expanded="false">Find
+                                    Details On</a>
+                                <div class="dropdown-menu dropdown-submenu"><a
+                                        class="text-white dropdown-item display-7" href="/findactor">Actors</a><a
+                                        class="text-white dropdown-item display-7" href="/finddirector">Directors</a>
+                                </div>
+                            </div>
+                            <div class="dropdown"><a class="text-white dropdown-item dropdown-toggle display-7"
+                                    href="https://google.com" data-toggle="dropdown-submenu"
+                                    aria-expanded="false">Search Based On</a>
+                                <div class="dropdown-menu dropdown-submenu"><a
+                                        class="text-white dropdown-item display-7" href="/findcustom">Actors</a><a
+                                        class="text-white dropdown-item display-7" href="/findcustom">Directors</a><a
+                                        class="text-white dropdown-item display-7" href="/findcustom">Language</a></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link text-white display-7" href="/"><span
+                                class="mbrib-info mbr-iconfont mbr-iconfont-btn"
+                                style="color: rgb(3, 218, 246);"></span>
+
+                            About Us</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link link text-white display-7" href="https://google.com"></a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+    </section>
+    <section class="engine"><a href="https://mobiri.se/v">html templates</a></section>
+    <section class="mbr-section form3 cid-rIKOwE5kgt" id="form3-10">
+
+
+
+
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="title col-12 col-lg-8">
+                    <h2 class="align-center pb-2 mbr-fonts-style display-2"><br>Director Details</h2>
+                    <h3 class="mbr-section-subtitle align-center pb-5 mbr-light mbr-fonts-style display-5">
+                        Search for your favourite Directors</h3>
+                </div>
+            </div>
+
+            <div class="row py-2 justify-content-center">
+                <div class="col-12 col-lg-6  col-md-8 " data-form-type="formoid">
+                    <!---Formbuilder Form--->
+                    <form action="#" th:action="@{/finddirector}" th:object="${director}" method="POST" class="mbr-form form-with-styler">
+                        <div class="row">
+
+                            <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">
+                            </div>
+                        </div>
+                        <div class="dragArea row">
+                            <div class="form-group col" data-for="email">
+                                <input type="text" th:field="*{name}" name="email" placeholder="Type Director's name"
+                                    data-form-field="Email" required="required" class="form-control display-7"
+                                    id="email-form3-10">
+                            </div>
+                            <div class="col-auto input-group-btn"><button type="submit"
+                                    class="btn btn-primary display-7" href="directordetails.html#counters3-11"><span
+                                        class="mbrib-search mbr-iconfont mbr-iconfont-btn"
+                                        style="color: rgb(1, 251, 21);"></span>Search</button></div>
+                        </div>
+                    </form>
+                    <!---Formbuilder Form--->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="counters3 counters cid-rIKOUyhDl7" id="counters3-11">
+
+
+
+
+	<th:block th:each="directordetails:${directors}">
+        <div class="container pt-4 mt-2">
+            <h2 class="mbr-section-title pb-3 align-center mbr-fonts-style display-2" th:text="${directordetails.name}"></h2>
+            <h3 class="mbr-section-subtitle pb-5 align-center mbr-fonts-style display-5">One of the best directors of
+                the time.</h3>
+            <div class="media-container-row">
+                <div class="media-block m-auto" style="width: 50%;">
+                    <div class="mbr-figure">
+                        <img th:src="@{${directordetails.file_path}}" alt="DirectorImage">
+                    </div>
+                </div>
+                <div class="cards-block">
+                    <div class="cards-container">
+                        <div class="card px-3 align-left col-12">
+                            <div class="panel-item p-4 d-flex align-items-center">
+                                <div class="card-img pr-3 d-flex align-items-center align-left">
+                                    <span class="mbr-iconfont pr-2 mbrib-calendar"
+                                        style="color: rgb(20, 157, 204); fill: rgb(20, 157, 204); font-size: 60px;"></span>
+                                </div>
+                                <div class="card-text">
+                                    <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-5">Date of Birth</h4>
+                                    <p class="mbr-content-text mbr-fonts-style display-7" th:text="${directordetails.dob}">   
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card px-3 align-left col-12">
+                            <div class="panel-item p-4 d-flex align-items-center">
+                                <div class="card-img pr-3 d-flex align-items-center align-left">
+                                    <span class="mbr-iconfont pr-2 mbrib-clock" style="font-size: 60px;"></span>
+                                </div>
+                                <div class="card-text">
+                                    <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-5">Age</h4>
+                                    <p class="mbr-content-text mbr-fonts-style display-7">
+                                        <span th:text="${directordetails.age}"></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card px-3 align-left col-12">
+                            <div class="panel-item p-4 d-flex align-items-center">
+                                <div class="card-img pr-3 d-flex align-items-center align-left">
+                                    <span class="mbr-iconfont pr-2 mbrib-bulleted-list" style="font-size: 60px;"></span>
+                                </div>
+                                <div class="card-text">
+                                    <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-5">Filmography</h4>
+                                    <p class="mbr-content-text mbr-fonts-style display-7">
+                                        <span th:text="${directordetails.filmography}"></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card px-3 align-left col-12">
+                            <div class="panel-item p-4 d-flex align-items-center">
+                                <div class="card-img pr-3 d-flex align-items-center align-left">
+                                    <span class="mbr-iconfont pr-2 mbri-user" style="font-size: 60px;"></span>
+                                </div>
+                                <div class="card-texts">
+                                    <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-5">Also an Actor</h4>
+                                    <p class="mbr-content-text mbr-fonts-style display-7">
+                                        No
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </th:block>
+    </section>
+
+    <section once="" class="cid-rH9jHGczuk mbr-reveal" id="footer7-z">
+
+
+
+
+
+        <div class="container">
+            <div class="media-container-row align-center mbr-white">
+                <div class="row row-links">
+                    <ul class="foot-menu">
+
+
+
+
+
+                        <li class="foot-menu-item mbr-fonts-style display-7">
+                            <a class="mbr-bold text-secondary" href="/" target="_self"
+                                style="font-weight: normal;">About us</a>
+                        </li>
+                        <li class="foot-menu-item mbr-fonts-style display-7"><a href="basicsearch.html"
+                                class="text-secondary">Features</a></li>
+                        <li class="foot-menu-item mbr-fonts-style display-7"><a href="/"
+                                class="text-secondary">Overview</a></li>
+                        <li class="foot-menu-item mbr-fonts-style display-7"><a href="/"
+                                class="text-secondary">References</a></li>
+                    </ul>
+                </div>
+                <div class="row social-row">
+                    <div class="social-list align-right pb-2">
+
+
+
+
+
+
+                        <div class="soc-item">
+                            <a href="https://twitter.com/mobirise" target="_blank">
+                                <span class="socicon-twitter socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="https://www.facebook.com/pages/Mobirise/1616226671953247" target="_blank">
+                                <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="https://www.youtube.com/c/mobirise" target="_blank">
+                                <span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="https://instagram.com/mobirise" target="_blank">
+                                <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="https://plus.google.com/u/0/+Mobirise" target="_blank">
+                                <span class="mbr-iconfont mbr-iconfont-social socicon-rss socicon"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="https://www.behance.net/Mobirise" target="_blank">
+                                <span class="mbr-iconfont mbr-iconfont-social socicon-whatsapp socicon"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-copirayt">
+                    <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
+                        © Copyright 2019 Vijeth P H and Shashank S - All Rights Reserved
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="/assets/web/assets/jquery/jquery.min.js"></script>
+    <script src="/assets/popper/popper.min.js"></script>
+    <script src="/assets/tether/tether.min.js"></script>
+    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/assets/touchswipe/jquery.touch-swipe.min.js"></script>
+    <script src="/assets/viewportchecker/jquery.viewportchecker.js"></script>
+    <script src="/assets/smoothscroll/smooth-scroll.js"></script>
+    <script src="/assets/dropdown/js/script.min.js"></script>
+    <script src="/assets/theme/js/script.js"></script>
+
+
+    <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i></i></a></div>
+    <input name="animation" type="hidden">
+</body>
+
+</html>
