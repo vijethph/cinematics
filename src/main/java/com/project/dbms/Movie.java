@@ -4,10 +4,18 @@ import java.math.BigInteger;
 import javax.persistence.*;
 
 @Entity
+@NamedNativeQueries({
+		@NamedNativeQuery(
+				name="CheckProfitLoss",
+				query="CALL check_profit_or_loss",
+				resultClass = Movie.class
+		)
+})
+/*
 @NamedStoredProcedureQueries({
 	@NamedStoredProcedureQuery(
 			name="checkProfitLoss",
-			procedureName="CHECK_PROFIT_OR_LOSS",
+			procedureName="public.CHECK_PROFIT_OR_LOSS",
 			resultClasses= {Movie.class},
 			parameters= {
 					@StoredProcedureParameter(
@@ -21,13 +29,13 @@ import javax.persistence.*;
 					@StoredProcedureParameter(
 							name="diff",
 							type=BigInteger.class,
-							mode=ParameterMode.OUT),
+							mode=ParameterMode.INOUT),
 					@StoredProcedureParameter(
 							name="msg",
 							type=String.class,
-							mode=ParameterMode.OUT),
+							mode=ParameterMode.INOUT),
 			})
-})
+})*/
 public class Movie {
 
 			@Id

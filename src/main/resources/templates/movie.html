@@ -47,7 +47,7 @@
                 <div class="navbar-brand">
                     <span class="navbar-logo">
                         <a href="index.html">
-                            <img src="assets/images/icons8-cinema-film-play-100-100x100.png" alt="Cinematics" title=""
+                            <img src="/assets/images/icons8-cinema-film-play-100-100x100.png" alt="Cinematics" title=""
                                 style="height: 4.7rem;">
                         </a>
                     </span>
@@ -212,11 +212,11 @@
                             <span class="mbri-bootstrap mbr-iconfont"></span>
                         </div>
                         <div class="card-box media-body">
-                            <h4 class="card-title py-3 mbr-fonts-style display-5">Length</h4>
+                            <h4 class="card-title py-3 mbr-fonts-style display-5"><strong>Length</strong></h4>
                             <p class="mbr-text mbr-fonts-style display-7">
                                 <span th:text="${movie.length}"></span> Minutes
                             </p>
-                            <h4 class="card-title py-3 mbr-fonts-style display-5">Language</h4>
+                            <h4 class="card-title py-3 mbr-fonts-style display-5"><strong>Language</strong></h4>
                             <p class="mbr-text mbr-fonts-style display-7">
                                 <span th:text="${movie.language}"></span>
                             </p>
@@ -244,17 +244,17 @@
                             <span class="mbri-responsive mbr-iconfont"></span>
                         </div>
                         <div class="media-body card-box">
-                            <h4 class="card-title py-3 mbr-fonts-style display-5">Budget</h4>
+                            <h4 class="card-title py-3 mbr-fonts-style display-5"><strong>Budget</strong></h4>
                             <p class="mbr-text mbr-fonts-style display-7">
                                 <span th:text="${movie.budget}"></span>
                             </p>
-                            <h4 class="card-title py-3 mbr-fonts-style display-5">Gross</h4>
+                            <h4 class="card-title py-3 mbr-fonts-style display-5"><strong>Gross</strong></h4>
                             <p class="mbr-text mbr-fonts-style display-7">
                                 <span th:text="${movie.gross}"></span>
                             </p>
                             <p class="mbr-text mbr-fonts-style display-7">
                                 Net Difference: <span th:text="${difference}"></span>
-                                <span th:text="${strmessage}"></span>
+                                <br><span th:text="${strmessage}"></span>
                             </p>
                         </div>
                     </div>

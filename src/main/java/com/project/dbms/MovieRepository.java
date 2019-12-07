@@ -1,13 +1,14 @@
 package com.project.dbms;
-import java.math.BigInteger;
-import java.util.HashMap;
-import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.query.Procedure;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+
+import java.math.BigInteger;
+import java.util.HashMap;
+import java.util.List;
 @Repository
 public interface MovieRepository extends JpaRepository<Movie,Integer>{
 	
@@ -35,8 +36,8 @@ public interface MovieRepository extends JpaRepository<Movie,Integer>{
 	@Query("SELECT m.budget, m.gross FROM Movie m WHERE m.movie_id=?1")
 	List<Object[]> findForProcedure(@Param("id") int id);
 	
-	@Procedure(name="checkProfitLoss")
-	HashMap<String,String> checkProfitOrLoss(@Param("budget") BigInteger budget,@Param("gross") BigInteger gross);
+	@Query(value = "CALL check_profit_or_loss(?1,?2,?3,?4)",nativeQuery = true)
+	List<Object[]>[] checkProfitOrLoss(@Param("budget") Long budget, @Param("gross") Long gross, @Param("diff") Long diff, @Param("msg") String msg);
 }
 /*
 	@Query("SELECT m,p FROM Movie m, Production_Company p WHERE p.name=m.company_name AND m.title=?1")

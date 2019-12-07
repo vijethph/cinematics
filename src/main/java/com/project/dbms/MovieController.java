@@ -1,22 +1,13 @@
 package com.project.dbms;
-import java.lang.reflect.Field;
-import java.math.BigInteger;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+
+import java.math.BigInteger;
+import java.util.HashMap;
+import java.util.List;
 
 @Controller
 public class MovieController {
@@ -74,9 +65,12 @@ public class MovieController {
 			a=(BigInteger) abj[0];
 			b=(BigInteger) abj[1];
 		}
-		HashMap<String,String> obj=movieRepository.checkProfitOrLoss(a, b);
-		model.addAttribute("difference", obj.get("diff"));
-		model.addAttribute("strmessage", obj.get("msg"));
+		List<Object[]>[] obj=movieRepository.checkProfitOrLoss(a.longValueExact(), b.longValueExact(),100L, "hello there");
+		for(List<Object[]> dbj:obj){
+			model.addAttribute("difference", dbj.get(0));
+			model.addAttribute("strmessage", dbj.get(1));
+		}
+
 		return "movie";
 	}
 	
@@ -203,8 +197,8 @@ public class MovieController {
 		List<Movie> listMovies=movieRepository.findAll();
 		model.addAttribute("greetings",listMovies); 
 		
-		BigInteger a=new BigInteger("560000000");
-		BigInteger b=new BigInteger("720000000");
+		Long a=new Long("560000000");
+		Long b=new Long("720000000");
 		HashMap<String,String> obj=movieRepository.checkProfitOrLoss(a, b);
 		System.out.println(obj.size()+" "+obj.keySet()+" "+obj.values());
 		Iterable<String> arr=obj.values();
