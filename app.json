@@ -1,0 +1,9 @@
+{
+  "name": "Cinematics",
+  "description": "A Spring Boot application that displays basic information about movies",
+  "repository": "https://github.com/vijethph/cinematics",
+  "logo": "https://github.com/vijethph/cinematics/logo.png",
+  "keywords": ["Spring Boot", "Thymeleaf", "Java", "PostGreSQL", "Hibernate"],
+  "success-url": "/",
+  "addons": [{ "plan": "heroku-postgresql", "options": { "version": "9.5" } }]
+}
