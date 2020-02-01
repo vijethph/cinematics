@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="img/icon.png" alt="Cinematics"></a>
+ <img width=200px height=200px src="src/main/resources/static/assets/images/clapperboard.png" alt="Cinematics"></a>
 </p>
 
 <h1 align="center">Cinematics</h1>
@@ -40,8 +40,8 @@
 
 ## :framed_picture: Screenshots <a name="screenshots"></a>
 
-![Login page](img/login.jpg "Login Screen")
-![Chat Page](img/chatting.jpg "Chatting Screen")
+![Home page](src/main/resources/static/assets/images/cinematicshomepage.jpg "Home Page")
+![Movie Details Page](src/main/resources/static/assets/images/moviedetails.jpg "Movie Details Page")
 
 ## :information_source: About <a name = "about"></a>
 
