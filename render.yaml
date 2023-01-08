@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: cinematics-app
+    env: docker
+    repo: https://github.com/vijethph/cinematics.git
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - fromGroup: cinematics-postgres-env-group
+
+databases:
+  - name: simplified-clarity
+    plan: free
+    databaseName: cinematics
+    user: charizard
+    ipAllowList: [] # only allow internal connections
+    postgresMajorVersion: 14
+
+envVarGroups:
+  - name: cinematics-postgres-env-group
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        sync: false
+      - key: SPRING_DATASOURCE_USERNAME
+        sync: false
+      - key: SPRING_DATASOURCE_PASSWORD
+        sync: false
