@@ -68,10 +68,15 @@ mvn -v
 
 Clone this project and open this project in terminal.
 
-```
+```bash
 cd cinematics
 ```
-
+Replace the following variables in `src/main/resources/application.properties` file (sample values are given for Docker Compose):
+```
+spring.datasource.url=jdbc:postgresql://postgresdb:5432/cinematics?currentSchema=public&user=testcomposeuser&password=Test@123
+spring.datasource.username=testcomposeuser
+spring.datasource.password=Test@123
+```
 And run the project using following command and check the output at https://localhost:8080 in your browser.
 
 ```
@@ -81,13 +86,14 @@ mvn spring-boot:run
 If it shows any errors then run the following command before executing the above command:
 
 ```
-maven package
+mvn package
 ```
 or
 ```
 mvn clean install
 ```
 
+This app can also be run with Docker using `Dockerfile` and `docker-compose.yml` files as long as the above variables are replaced with suitable values.
 <!--## 🔧 Running the tests <a name = "tests"></a>
 Explain how to run the automated tests for this system.
 
@@ -143,4 +149,3 @@ See also the list of [contributors](https://github.com/vijethph/) who participat
 - Inspiration: Project Ideas for Spring Boot
 - References: Spring Boot and Thymeleaf Documentations.
 
-### Made with ❤ in India

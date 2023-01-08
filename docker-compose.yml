@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+  app:
+    image: 'test-java-app:latest'
+    container_name: test-java-app
+    build:
+      context: .
+    ports:
+      - '8080:8080'
+    depends_on:
+      - postgresdb
+
+  postgresdb:
+    image: 'postgres:14.6'
+    container_name: postgresdb
+    volumes:
+      - ./initializeDB.sql:/docker-entrypoint-initdb.d/createstuff.sql
+    environment:
+      - POSTGRES_USER=testcomposeuser
+      - POSTGRES_PASSWORD=Test@123
+      - POSTGRES_DB=cinematics
