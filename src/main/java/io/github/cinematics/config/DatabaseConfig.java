@@ -1,4 +1,4 @@
-package com.project.dbms;
+package io.github.cinematics.config;
 
 import com.zaxxer.hikari.*;
 import org.springframework.beans.factory.annotation.Value;

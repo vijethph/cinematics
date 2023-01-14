@@ -1,10 +1,10 @@
-package com.project.dbms;
+package io.github.cinematics;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DbmsApplicationTests {
+class CinematicsApplicationTests {
 
 	@Test
 	void contextLoads() {

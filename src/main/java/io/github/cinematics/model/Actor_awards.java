@@ -1,4 +1,4 @@
-package com.project.dbms;
+package io.github.cinematics.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

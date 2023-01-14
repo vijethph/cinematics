@@ -8,6 +8,10 @@ services:
       context: .
     ports:
       - '8080:8080'
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresdb:5432/cinematics?currentSchema=public&user=testcomposeuser&password=Test@123
+      - SPRING_DATASOURCE_USERNAME=testcomposeuser
+      - SPRING_DATASOURCE_PASSWORD=Test@123
     depends_on:
       - postgresdb
 

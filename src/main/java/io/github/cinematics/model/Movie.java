@@ -1,13 +1,13 @@
-package com.project.dbms;
-import java.math.BigInteger;
+package io.github.cinematics.model;
 
 import javax.persistence.*;
+import java.math.BigInteger;
 
 @Entity
 @NamedNativeQueries({
 		@NamedNativeQuery(
 				name="CheckProfitLoss",
-				query="CALL check_profit_or_loss",
+				query="CALL check_profit_or_loss()",
 				resultClass = Movie.class
 		)
 })

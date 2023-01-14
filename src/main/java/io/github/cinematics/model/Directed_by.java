@@ -1,16 +1,18 @@
-package com.project.dbms;
+package io.github.cinematics.model;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
 @Entity
-public class Performed_by {
+public class Directed_by {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	
 	private Integer movie_id;
 	
-	private String actor_name;
+	private String director_name;
 
 	public Integer getMovie_id() {
 		return movie_id;
@@ -20,12 +22,12 @@ public class Performed_by {
 		this.movie_id = movie_id;
 	}
 
-	public String getActor_name() {
-		return actor_name;
+	public String getDirector_name() {
+		return director_name;
 	}
 
-	public void setActor_name(String actor_name) {
-		this.actor_name = actor_name;
+	public void setDirector_name(String director_name) {
+		this.director_name = director_name;
 	}
 	
 }

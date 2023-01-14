@@ -1,4 +1,5 @@
-package com.project.dbms;
+package io.github.cinematics.model;
+
 import java.util.Set;
 
 import javax.persistence.*;

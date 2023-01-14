@@ -1,4 +1,11 @@
-package com.project.dbms;
+package io.github.cinematics.controller;
+
+import io.github.cinematics.dao.ActorRepository;
+import io.github.cinematics.dao.DirectorRepository;
+import io.github.cinematics.dao.MovieRepository;
+import io.github.cinematics.model.Actor;
+import io.github.cinematics.model.Director;
+import io.github.cinematics.model.Movie;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -6,7 +13,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigInteger;
-import java.util.HashMap;
 import java.util.List;
 
 @Controller
@@ -34,23 +40,23 @@ public class MovieController {
 	
 	@PostMapping("/find")
 	public String basicResults(@ModelAttribute("movie") Movie movie,Model model) {
-		List<Object[]> m[]=movieRepository.findByMovieTitle(movie.getTitle());
-		Object[] mves=new Object[m.length];
-		Object[] gnres=new Object[m.length];
-		for(int i=0;i<m.length;i++) {
-			mves[i]=m[i].get(0);
-			gnres[i]=m[i].get(1);
+		List<Object[]>[] moviesList =movieRepository.findByMovieTitle(movie.getTitle());
+		Object[] movies=new Object[moviesList.length];
+		Object[] genres=new Object[moviesList.length];
+		for(int i=0;i<moviesList.length;i++) {
+			movies[i]=moviesList[i].get(0);
+			genres[i]=moviesList[i].get(1);
 		}
 		
-		model.addAttribute("movies", mves);
-		model.addAttribute("genres", gnres);
+		model.addAttribute("movies", movies);
+		model.addAttribute("genres", genres);
 		return "basicsearch";
 	}
 
 	@GetMapping("/movie/{id}")
 	public String movieDetails(@PathVariable("id") int id,Model model){
 		List<Object[]> dls=movieRepository.findByMovieId(id);
-		for(Object obj[]:dls) {
+		for(Object[] obj :dls) {
 			model.addAttribute("quote",obj[0]);
 			model.addAttribute("movie",obj[1]);
 			model.addAttribute("company",obj[2]);
@@ -77,16 +83,16 @@ public class MovieController {
 	@GetMapping("/findall")
 	public String listAllMovies(Model model) {
 		model.addAttribute("movie", new Movie());
-		List<Object[]> m[]=movieRepository.findByAllMovies();
-		Object[] mves=new Object[m.length];
-		Object[] gnres=new Object[m.length];
-		for(int i=0;i<m.length;i++) {
-			mves[i]=m[i].get(0);
-			gnres[i]=m[i].get(1);
+		List<Object[]>[] moviesList =movieRepository.findByAllMovies();
+		Object[] movies=new Object[moviesList.length];
+		Object[] genres=new Object[moviesList.length];
+		for(int i=0;i<moviesList.length;i++) {
+			movies[i]=moviesList[i].get(0);
+			genres[i]=moviesList[i].get(1);
 		}
 		
-		model.addAttribute("movies", mves);
-		model.addAttribute("genres", gnres);
+		model.addAttribute("movies", movies);
+		model.addAttribute("genres", genres);
 		return "basicsearch";
 	}
 	
@@ -99,7 +105,7 @@ public class MovieController {
 	@PostMapping("/findactor")
 	public String actorDetails(@ModelAttribute("actor") Actor actor,Model model) {
 		List<Object[]> act=actorRepository.findByActorName(actor.getName());
-		for(Object o[]:act) {
+		for(Object[] o :act) {
 			model.addAttribute("actordetails",o[0]);
 			model.addAttribute("awards",o[1]);
 		}
@@ -115,7 +121,7 @@ public class MovieController {
 	@PostMapping("/finddirector")
 	public String directorDetails(@ModelAttribute("director") Director director,Model model) {
 		List<Object[]> dct=directorRepository.findByDirectorName(director.getName());
-		for(Object o[]:dct) {
+		for(Object[] o :dct) {
 			model.addAttribute("directors",o[0]);
 		}
 		return "directordetails";
@@ -143,7 +149,7 @@ public class MovieController {
 	
 	@GetMapping("/findcustom")
 	public String showCustomPage(Model model) {
-		return "Customsearch";
+		return "customsearch";
 	}
 	
 	@PostMapping("/findactname")
@@ -158,7 +164,7 @@ public class MovieController {
 		
 		model.addAttribute("movies", mves);
 		model.addAttribute("genres", gnres);
-		return "Customsearch";
+		return "customsearch";
 	}
 	
 	@PostMapping("/finddirectname")
@@ -173,7 +179,7 @@ public class MovieController {
 		
 		model.addAttribute("movies", mves);
 		model.addAttribute("genres", gnres);
-		return "Customsearch";
+		return "customsearch";
 	}
 	
 	@PostMapping("/findmovlang")
@@ -188,7 +194,7 @@ public class MovieController {
 		
 		model.addAttribute("movies", mves);
 		model.addAttribute("genres", gnres);
-		return "Customsearch";
+		return "customsearch";
 	}
 }
 

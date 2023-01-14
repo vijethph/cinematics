@@ -56,7 +56,7 @@ Follow these instructions in order to get a copy of the project up and running o
 
 ### Prerequisites
 
-Java runtime version 8 (JAVA SE 8), Apache Maven>=3.6 and PostgreSQL>=9.0 are required.
+Java runtime version 11 (JAVA SE 11), Apache Maven>=3.6 and PostgreSQL>=14.0 are required.
 
 After installing, check their versions using these commands
 
