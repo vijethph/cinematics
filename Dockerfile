@@ -11,5 +11,5 @@ RUN mvn -f /usr/src/app/pom.xml clean package -DskipTests
 #
 FROM eclipse-temurin:16 as package
 COPY --from=build /usr/src/app/target/cinematics-0.0.1-SNAPSHOT.jar /usr/app/cinematics.jar
-EXPOSE 8080
+EXPOSE 8080 10000
 ENTRYPOINT ["java","-jar","/usr/app/cinematics.jar"]
